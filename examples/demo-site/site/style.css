@@ -1,0 +1,28 @@
+:root { --ink:#2a211b; --muted:#7a6a5c; --cream:#fbf6ee; --sand:#f1e6d4; --accent:#b4562c; --dark:#2a211b; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:Georgia,'Times New Roman',serif; color:var(--ink); background:var(--cream); line-height:1.6; }
+a { color:inherit; }
+header.site { display:flex; align-items:center; justify-content:space-between; padding:22px 8vw; border-bottom:1px solid var(--sand); }
+.logo { font-size:22px; letter-spacing:.08em; text-decoration:none; font-weight:bold; }
+nav a { margin-left:28px; text-decoration:none; font-family:system-ui,sans-serif; font-size:14px; color:var(--muted); }
+nav a:hover { color:var(--accent); }
+.hero { padding:120px 8vw 110px; background:linear-gradient(135deg,#f1e6d4,#e4cfae); }
+.hero h1 { font-size:clamp(36px,6vw,64px); margin:0 0 18px; max-width:14em; line-height:1.1; }
+.hero p { font-size:20px; max-width:34em; color:var(--muted); margin:0 0 28px; }
+.btn { display:inline-block; background:var(--accent); color:#fff; padding:13px 26px; border-radius:999px; text-decoration:none; font-family:system-ui,sans-serif; font-size:15px; }
+section.block { padding:80px 8vw; }
+section.block.alt { background:var(--sand); }
+h2 { font-size:34px; margin:0 0 20px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; margin-top:30px; }
+.card { background:#fff; border-radius:14px; padding:28px; box-shadow:0 2px 14px rgba(42,33,27,.08); }
+.card h3 { margin:0 0 8px; }
+.card .price { font-family:system-ui,sans-serif; color:var(--accent); font-weight:bold; }
+.swatch { height:150px; border-radius:10px; margin-bottom:16px; }
+.s1 { background:linear-gradient(160deg,#8a4b2a,#c98a54); }
+.s2 { background:linear-gradient(160deg,#4d5a3a,#9aa874); }
+.s3 { background:linear-gradient(160deg,#5b3a46,#c08aa0); }
+.s4 { background:linear-gradient(160deg,#2f4858,#6fa3b5); }
+footer.site { padding:50px 8vw; background:var(--dark); color:#cdbfae; font-family:system-ui,sans-serif; font-size:14px; }
+footer.site a { margin-right:22px; }
+.post { max-width:42em; }
+.post p { font-size:18px; }

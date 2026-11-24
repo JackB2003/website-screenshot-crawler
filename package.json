@@ -1,0 +1,45 @@
+{
+  "name": "website-screenshot-crawler",
+  "version": "1.0.0",
+  "description": "Self-hosted website screenshot crawler. Enter one URL and capture full-page screenshots of every page at desktop, tablet and mobile sizes.",
+  "keywords": [
+    "screenshot",
+    "website-screenshot",
+    "full-page-screenshot",
+    "web-crawler",
+    "sitemap",
+    "playwright",
+    "chromium",
+    "responsive-design",
+    "self-hosted",
+    "site-audit"
+  ],
+  "homepage": "https://github.com/JackB2003/website-screenshot-crawler#readme",
+  "bugs": {
+    "url": "https://github.com/JackB2003/website-screenshot-crawler/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackB2003/website-screenshot-crawler.git"
+  },
+  "license": "MIT",
+  "author": "Jack Bonner",
+  "private": false,
+  "type": "commonjs",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "demo-site": "node examples/demo-site/serve.js",
+    "test": "node --test --test-concurrency=1 \"test/*.test.js\"",
+    "test:unit": "node --test test/netguard.test.js test/api.test.js test/sitemap.test.js",
+    "check": "node --check server.js && node --check lib/app.js && node --check lib/scanner.js && node --check lib/netguard.js && node --check lib/proxy.js && node --check lib/browser.js && node --check lib/sitemap.js"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "express": "^4.21.2",
+    "playwright": "^1.62.1"
+  }
+}

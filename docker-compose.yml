@@ -1,0 +1,23 @@
+services:
+  crawler:
+    build: .
+    ports:
+      # Published on localhost only. Change this, and set AUTH_TOKEN, to expose it.
+      - "127.0.0.1:${PORT:-3012}:3012"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      # Inside the container the app listens on all interfaces; the port mapping
+      # above is what keeps it local. Remove this line when you set AUTH_TOKEN.
+      ALLOW_UNAUTHENTICATED: "true"
+    volumes:
+      - screenshots:/app/screenshots
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+
+volumes:
+  screenshots:
