@@ -54,7 +54,11 @@ function isPortFree(port) {
 function installChromium() {
   // Idempotent: does nothing when the browser is already installed.
   const cli = path.join(path.dirname(require.resolve('playwright/package.json')), 'cli.js');
-  const result = spawnSync(process.execPath, [cli, 'install', '--only-shell', 'chromium'], { stdio: 'inherit' });
+  // Playwright prints a confusing warning when it detects it was started through npx.
+  const env = { ...process.env };
+  delete env.npm_command;
+  delete env.npm_lifecycle_event;
+  const result = spawnSync(process.execPath, [cli, 'install', '--only-shell', 'chromium'], { stdio: 'inherit', env });
   if (result.status !== 0) {
     console.error('\nCould not download the Chromium browser. Check your internet connection and try again.');
     process.exit(1);
