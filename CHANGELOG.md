@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0
+
+- One-command start: `npx github:JackB2003/website-screenshot-crawler` downloads Chromium on first run, picks a free port and opens the browser
+- Command-line options: `--port`, `--allow-private`, `--no-open`, `--no-sandbox`
+
 ## 1.0.0
 
 First release.

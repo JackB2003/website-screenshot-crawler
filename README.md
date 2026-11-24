@@ -20,7 +20,28 @@ Self-hosted and free. No account, no API key, no per-screenshot fee. Run it on y
 
 ## Quick start
 
-You need Node.js 20 or newer.
+You need [Node.js](https://nodejs.org) 20 or newer. Then run one command:
+
+```bash
+npx github:JackB2003/website-screenshot-crawler
+```
+
+The first run downloads the Chromium browser it needs (about 130 MB) and installs the app. When it is ready it opens <http://localhost:3012> in your browser. Enter a URL, choose your device sizes and press **Start Scan**. Press Ctrl+C in the terminal to stop it.
+
+Options:
+
+| Option | What it does |
+|---|---|
+| `--port 8080` | Use a different port. By default it uses 3012, or the next free one. |
+| `--allow-private` | Allow scanning `localhost` and private network sites. See [below](#scanning-a-site-on-your-own-machine). |
+| `--no-open` | Do not open the browser automatically. |
+| `--no-sandbox` | Start Chromium without its sandbox, for some containers and servers. |
+
+Example: `npx github:JackB2003/website-screenshot-crawler --port 8080 --no-open`
+
+### Install from source
+
+If you want to change the code, or run it as a long-lived service:
 
 ```bash
 git clone https://github.com/JackB2003/website-screenshot-crawler.git
@@ -30,15 +51,13 @@ npx playwright install --only-shell chromium
 npm start
 ```
 
-Open <http://localhost:3012>, enter a URL, choose your device sizes and press **Start Scan**.
-
 ### Try it on the included demo site
 
 No site handy? The repo ships with a small sample site:
 
 ```bash
 npm run demo-site                       # terminal 1: serves http://127.0.0.1:4100
-ALLOW_PRIVATE_URLS=true npm start       # terminal 2
+npx . --allow-private                   # terminal 2 (or: ALLOW_PRIVATE_URLS=true npm start)
 ```
 
 Then scan `http://127.0.0.1:4100`.
@@ -48,8 +67,10 @@ Then scan `http://127.0.0.1:4100`.
 Local and private addresses are blocked by default (see [Security](#security)). To scan a dev server on `localhost` or a site on your home network, turn private scanning on for your own machine:
 
 ```bash
-ALLOW_PRIVATE_URLS=true npm start
+npx github:JackB2003/website-screenshot-crawler --allow-private
 ```
+
+(From a source checkout: `ALLOW_PRIVATE_URLS=true npm start`.)
 
 Then scan `http://localhost:3000` or `http://192.168.1.50:5173`. Include the `http://` so the address is not upgraded to `https://`. Do not turn this on for a server other people can reach.
 
