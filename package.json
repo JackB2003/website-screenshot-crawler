@@ -33,7 +33,7 @@
   "scripts": {
     "start": "node server.js",
     "demo-site": "node examples/demo-site/serve.js",
-    "test": "node --test --test-concurrency=1 \"test/*.test.js\"",
+    "test": "node --test --test-concurrency=1 test/api.test.js test/netguard.test.js test/sitemap.test.js test/scan.integration.test.js",
     "test:unit": "node --test test/netguard.test.js test/api.test.js test/sitemap.test.js",
     "check": "node --check server.js && node --check lib/app.js && node --check lib/scanner.js && node --check lib/netguard.js && node --check lib/proxy.js && node --check lib/browser.js && node --check lib/sitemap.js"
   },
