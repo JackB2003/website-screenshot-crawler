@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/JackB2003/website-screenshot-crawler/actions/workflows/ci.yml/badge.svg)](https://github.com/JackB2003/website-screenshot-crawler/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Node.js 20+](https://img.shields.io/badge/node-%E2%89%A5%2020-3c873a.svg)](package.json)
+[![Node.js 20.19+](https://img.shields.io/badge/node-%E2%89%A5%2020.19-3c873a.svg)](package.json)
 
 **Capture full-page screenshots of every page on a website from a single URL.** Enter an address and the crawler finds the pages itself, using the sitemap when there is one and a real-browser link crawl when there is not. It shoots each page at desktop, tablet and mobile sizes, streams progress live, and hands you a gallery and a ZIP.
 
